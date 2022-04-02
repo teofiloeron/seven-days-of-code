@@ -94,27 +94,5 @@ public class Filme {
 				Id, Rank, Title, FullTitle, Year, Image, Crew, ImDbRating, ImDbRatingCount);
 	}
 	
-//	public class Builder {
-//		
-//		private Filme filme = null;
-//		
-//		public Builder() {
-//			filme = new Filme();
-//		}
-//		
-//		public Filme setId				(String string) {return this.filme;};
-//		public Filme setRank			(String string) {return this.filme;};
-//		public Filme setTitle			(String string) {return this.filme;};
-//		public Filme setFullTitle		(String string) {return this.filme;};
-//		public Filme setYear			(String string) {return this.filme;};
-//		public Filme setImage			(String string) {return this.filme;};
-//		public Filme setCrew			(String string) {return this.filme;};
-//		public Filme setImDbRating		(String string) {return this.filme;};
-//		public Filme setImDbRatingCount (String string) {return this.filme;};
-//		
-//		public Filme build() {
-//			return this.filme;
-//		}
-//	}
 
 }
