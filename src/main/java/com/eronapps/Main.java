@@ -29,9 +29,7 @@ public class Main {
 			
 			// Parser feito em JAVA
 			List<Filme> listaDeFilmesPorJava = FilmeUtil.parseFilmes(response.body());
-			for (Filme filme : listaDeFilmesPorJava) {
-				System.out.println(filme.toString());
-			}
+			listaDeFilmesPorJava.forEach(System.out::println);
 			
 			// Parser da resposta para Objetos JAVA com Jackson
 		    List<Filme> listaDeFilmesPorJackson = FilmeUtil.parseJson(response.body());
