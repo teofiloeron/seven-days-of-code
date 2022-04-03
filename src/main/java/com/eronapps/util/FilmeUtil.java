@@ -64,9 +64,8 @@ public class FilmeUtil {
 		
 		return filme;
 	}
-	
-	public static List<Filme> parseFilmes(String body){
 		
+	private static List<String> preParseFilmes(String body){
 		// retira os colchetes []
 		String[] split = body.split("\\[|\\]");
 		// obtem os itens separados por chaves {}
@@ -76,6 +75,12 @@ public class FilmeUtil {
 		for (int i = 1; i < itens.length; i++) {
 			listaEmStringDeFilmes.add(itens[i].strip());
 		}
+		return listaEmStringDeFilmes;
+	}
+	
+	public static List<Filme> parseFilmes(String body){
+		
+		List<String> listaEmStringDeFilmes = preParseFilmes(body);
 
 		List<Filme> listaDeFilmes = new ArrayList<Filme>(listaEmStringDeFilmes.size());
 		for (int i = 0; i < listaEmStringDeFilmes.size(); i++) {
@@ -85,7 +90,7 @@ public class FilmeUtil {
 
 		return listaDeFilmes;
 	}
-
+	
 	public static List<Filme> parseJson(String json) throws JsonMappingException, JsonProcessingException{
 		ObjectMapper objectMapper = new ObjectMapper();
 		Items items = objectMapper.readValue(json, Items.class);
