@@ -9,6 +9,9 @@ Criar uma API em Java para pesquisar os top 250 filmes da lista do IMDB, eles vi
     - Consumo da API IMDB (Top250 movies) e impressão em console
 
 - Dia 2
+    - Obter os dados dos filmes transformando em Strings Java. E listas com todos os atributos e valores Java.
+
+- Dia 3
     - Transformar a lista de filmes para objeto filme java.
 
 ###### Tecnologias
