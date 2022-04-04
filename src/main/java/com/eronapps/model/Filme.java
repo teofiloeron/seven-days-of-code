@@ -2,15 +2,15 @@ package com.eronapps.model;
 
 public class Filme {
 
-	public String Id;
-	public String Rank;
-	public String Title;
-	public String FullTitle;
-	public String Year;
-	public String Image;
-	public String Crew;
-	public String ImDbRating;
-	public String ImDbRatingCount;
+	private String Id;
+	private String Rank;
+	private String Title;
+	private String FullTitle;
+	private String Year;
+	private String Image;
+	private String Crew;
+	private String ImDbRating;
+	private String ImDbRatingCount;
 
 	public Filme() {
 	}

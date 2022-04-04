@@ -1,6 +1,7 @@
 package com.eronapps;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.net.http.HttpResponse;
 import java.util.List;
@@ -9,6 +10,7 @@ import com.eronapps.config.Configuracoes;
 import com.eronapps.model.Filme;
 import com.eronapps.service.Service;
 import com.eronapps.util.FilmeUtil;
+import com.eronapps.util.HTMLGenerator;
 
 public class Main {
 	
@@ -27,15 +29,20 @@ public class Main {
 		
 		if(response.statusCode() == 200) {
 			
-			// Parser feito em JAVA
-			List<Filme> listaDeFilmesPorJava = FilmeUtil.parseFilmes(response.body());
-			listaDeFilmesPorJava.forEach(System.out::println);
+			System.out.println("Resposta recebida com sucesso!");
+			
+//			// Parser feito em JAVA
+//			List<Filme> listaDeFilmesPorJava = FilmeUtil.parseFilmes(response.body());
+//			listaDeFilmesPorJava.forEach(System.out::println);
 			
 			// Parser da resposta para Objetos JAVA com Jackson
 		    List<Filme> listaDeFilmesPorJackson = FilmeUtil.parseJson(response.body());
 		    for (Filme filme : listaDeFilmesPorJackson) {
 				System.out.println(filme.toString());
 			}
+		 
+		    System.out.println("Chamando generator...");
+		    new HTMLGenerator(new PrintWriter("IMDBtop250movies.html")).generator(listaDeFilmesPorJackson);
 		    
 		}
 		
